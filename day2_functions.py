@@ -75,3 +75,92 @@ display_details(name="hieu", age=22, country="vietnam")
 values = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 doubled_values = list(map(lambda x: x * 2, values))
 print(doubled_values)
+
+# Exercise 12: Write a function that calculates the average of an arbitrary number of positional arguments.
+def average(*args):
+    if len(args) == 0:
+        return 0
+    tong = 0
+    for a in args:
+        tong += a
+    return tong / len(args)
+print(average(1, 2, 3, 4, 5, 6, 4, 8, 9))
+print(average())
+
+# Exercise 13: Write a function that prints the values of all keyword arguments separated by hyphens.
+# 1st way
+def printAll(**kwargs):
+    if not kwargs:
+        return
+    else:
+        i = len(kwargs)
+        for key, value in kwargs.items():
+            if i == 1:
+                print(f"{value}", end=" ")
+            else:
+                print(f"{value}", end="-")
+            i -= 1
+    return
+printAll(Name="Hieu", age=22, country="VietNam")
+
+# 2nd way
+def printALL(**kwargs):
+    if not kwargs:
+        return
+    else:
+        values = kwargs.values()
+        result = "+".join(str(value) for value in values)
+        print(result)
+    return
+printALL(Name="Hieu", age=22, country="VietNam")
+
+# Exercise 14: Write a function that prints the maximum value from an arbitrary number of positional arguments.
+def max_number(*args):
+    if not args:
+        print("No values provided.")
+        return
+    else:
+        if any(value < 0 for value in args):
+            print("Invalid input: negative numbers are not allowed.")
+            return
+        else:
+            max_value = max(args)
+            print(max_value)
+            return
+max_number(1, 2, 3, 4, 5, 6, -7, 8, 9)
+max_number(1, 2, 3, 4, 5, 6, 7, 8, 9)
+max_number()
+
+# Exercise 15: Write a function that uses map with a lambda to double the numbers in a list, then uses filter with a lambda to keep only the numbers greater than 5, and prints the final list.
+def process_numbers(*args):
+    if not args:
+        print("No values provided.")
+        return
+    else:
+        double_value = list(map(lambda x: x*2, args))
+        biggerthan5value = list(filter(lambda y: y>5, double_value))
+        print(biggerthan5value)
+        return
+process_numbers(2, 3, 4)
+process_numbers(1, 2, 3)
+
+# Exercise 16: Create a function that sums all positional number arguments (*args). If a keyword argument multiply (containing a number) is passed, multiply the sum by that value before returning the total.
+def calculate_total(*args, **kwargs):
+    if not args:
+        print("No values provided.")
+        return
+    else:
+        tong = 0
+        for a in args:
+            tong += a
+        if "multiply" in kwargs:
+            tong *= kwargs["multiply"]
+            print(tong)
+            return
+        else:
+            print(tong)
+            return
+calculate_total(1, 2, 3)
+calculate_total(1, 2, 3, multiply=2)
+calculate_total()
+calculate_total(1, 2, 3, 4, 5)
