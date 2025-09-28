@@ -30,4 +30,9 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   9. Sort list in descending order with lambda.
   10. Print key-value pairs in specific format.
   11. Double list elements with lambda.
+  12. Calculate average with *args.
+  13. Join strings with **kwargs (2 ways: hyphen, plus).
+  14. Find maximum with *args.
+  15. Process numbers with lambda (double and filter).
+  16. Combine *args and **kwargs for total calculation.
 - **File**: `day2_functions.py` (includes usage examples).
