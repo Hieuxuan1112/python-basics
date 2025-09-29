@@ -36,3 +36,12 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   15. Process numbers with lambda (double and filter).
   16. Combine *args and **kwargs for total calculation.
 - **File**: `day2_functions.py` (includes usage examples).
+
+## Day 3 – List, Dict, Set, Tuple
+- **Topics**: List (mutable, ordered), Dict (key-value), Set (unique), Tuple (immutable).
+- **Exercises**:
+  1. Count character frequency in a string.
+  2. Remove duplicates from a list.
+  3. Find max and min in a list.
+- **Practice**: Basic operations on list, dict, set, and tuple.
+- **File**: `day3_data_structures.py` (includes usage examples).
