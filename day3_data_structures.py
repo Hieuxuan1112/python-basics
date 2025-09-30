@@ -132,3 +132,76 @@ def find_max_min_method2(input_list):
 find_max_min_method1([1, 5, 7, 2, 4, 6, 9, 8])
 find_max_min_method2([1, 5, 7, 2, 4, 6, 9, 8])
 find_max_min_method2([])
+
+# Exercise 4: Create and sort a list
+def sort_list(lst):
+    if not lst:
+        return []
+    new_lst = lst.copy()
+    new_lst.sort()
+    return new_lst
+original = [5, 2, 8, 1, 9]
+sorted_result = sort_list(original)
+print(f"Original: {original}")
+print(f"Sorted: {sorted_result}")
+
+# Exercise 5: Check and add elements to a dictionary
+def update_dict(d, key, value):
+    if not d:
+        d = {}
+    d[key] = d.get(key, 0) + value
+    print(f"Updated dict: {d}")
+my_dict = {"a": 1, "b": 2}
+update_dict(my_dict, "a", 1)
+update_dict(my_dict, "c", 3)
+
+# Exercise 6: Find the intersection of two sets
+def find_intersection(set1, set2):
+    if not set1 or not set2:
+        return set()
+    return set1.intersection(set2)
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+result = find_intersection(s1, s2)
+print(f"Intersection: {result}")
+
+# Exercise 7: Create a tuple from user input
+def create_tuple_from_string(s):
+    if not s:
+        return ()
+    nums = s.split(",")
+    tuple_nums = tuple(int(num) for num in nums) 
+    print(f"Tuple: {tuple_nums}")
+create_tuple_from_string("1,2,3")
+
+# Exercise 8: Reverse a list without using reverse()
+def reverse_list(lst):
+    if not lst:
+        return []
+    reversed_lst = []
+    for i in range(len(lst) - 1, -1, -1):
+        reversed_lst.append(lst[i])
+    return reversed_lst
+original = [1, 2, 3, 4]
+reversed_result = reverse_list(original)
+print(f"Original: {original}")
+print(f"Reversed: {reversed_result}")
+
+# Exercise 9: Check if one set is a subset of another
+def is_subset(set1, set2):
+    if not set1 or not set2:
+        return False
+    return set1.issubset(set2)
+s1 = {1, 2}
+s2 = {1, 2, 3, 4}
+print(f"Is {s1} subset of {s2}? {is_subset(s1, s2)}")
+
+# Exercise 10: Combine dictionary and tuple data
+def print_student_info(students):
+    if not students:
+        print("No students provided")
+        return
+    for name, (age, score) in students.items():
+        print(f"{name}: age {age}, Score: {score}")
+student_dict = {"Alice": (25, 85), "Bob": (30, 90)}
+print_student_info(student_dict)
