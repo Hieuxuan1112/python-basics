@@ -40,8 +40,14 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
 ## Day 3 – List, Dict, Set, Tuple
 - **Topics**: List (mutable, ordered), Dict (key-value), Set (unique), Tuple (immutable).
 - **Exercises**:
-  1. Count character frequency in a string.
-  2. Remove duplicates from a list.
+  1. Count character frequency in a string (dict).
+  2. Remove duplicates from a list (set).
   3. Find max and min in a list.
-- **Practice**: Basic operations on list, dict, set, and tuple.
-- **File**: `day3_data_structures.py` (includes usage examples).
+  4. Sort a list in ascending order.
+  5. Update a dict with key-value pairs.
+  6. Find intersection of two sets.
+  7. Create a tuple from comma-separated input.
+  8. Reverse a list without using reverse().
+  9. Check if one set is a subset of another.
+  10. Print student info using dict with tuple values.
+- **File**: `day3_data_structures.py` (includes comparisons with C++).
