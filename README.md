@@ -51,3 +51,23 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   9. Check if one set is a subset of another.
   10. Print student info using dict with tuple values.
 - **File**: `day3_data_structures.py` (includes comparisons with C++).
+
+## Day 4 – Hashing
+- **Topics**: Hashing with dict and set for fast lookups.
+- **Exercises**:
+  1. Two Sum.
+  2. Check Anagram.
+  3. Single Number.
+  4. Group Anagrams.
+  5. Max Value Key.
+  6. Count Frequency.
+  7. Check Equal Lists.
+  8. Symmetric Difference.
+  9. Most Frequent Number.
+  10. Subarray Sum K.
+  11. Pairs with Sum <= Target.
+  12. Count Words.
+  13. Count Common Elements.
+  14. Create Dict from Lists.
+  15. Diff Char Frequency.
+- **File**: `day4_hashing.py`.
