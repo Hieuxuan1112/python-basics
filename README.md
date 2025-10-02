@@ -83,4 +83,11 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   6. 3Sum.
   7. Longest Substring Without Repeating Characters.
   8. Trapping Rain Water.
+  9. Remove Duplicates from Sorted Array II.
+  10. Rotate Array.
+  11. K Closest Points to Origin.
+  12. Subarray Product Less Than K.
+  13. Partition Labels.
+  14. Minimum Window Substring.
+  15. Sliding Window Maximum.
 - **File**: `day5_two_pointers.py`.
