@@ -71,3 +71,16 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   14. Create Dict from Lists.
   15. Diff Char Frequency.
 - **File**: `day4_hashing.py`.
+
+## Day 5 – Two Pointers
+- **Topics**: Two pointers technique for array/string problems (palindrome, merge, etc.).
+- **Exercises**:
+  1. Valid Palindrome.
+  2. Merge Two Sorted Lists.
+  3. Remove Duplicates from Sorted Array.
+  4. Two Sum II - Input Array Is Sorted.
+  5. Container With Most Water.
+  6. 3Sum.
+  7. Longest Substring Without Repeating Characters.
+  8. Trapping Rain Water.
+- **File**: `day5_two_pointers.py`.
