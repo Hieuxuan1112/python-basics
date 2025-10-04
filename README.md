@@ -103,4 +103,12 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   6. Minimum Window Substring.
   7. Find All Anagrams in a String.
   8. Subarrays with K Different Integers.
+  9. Longest Subarray with Sum K.
+  10. Count Subarrays with Equal Number of 0s and 1s.
+  11. Smallest Subarray with All Characters.
+  12. Maximum Points You Can Obtain from Cards.
+  13. Count Number of Nice Subarrays.
+  14. Longest Well-Performing Interval.
+  15. Sliding Window Median.
+  16. Count Subarrays with Sum Equals K.
 - **File**: `day6_sliding_window.py`.
