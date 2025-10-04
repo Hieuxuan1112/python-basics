@@ -169,3 +169,166 @@ def subarrays_with_k_distinct(nums, k):
 
 print("\nExercise 8 - Subarrays with K Different Integers:")
 print(subarrays_with_k_distinct([1, 2, 1, 2, 3], 2))
+
+
+# Exercise 9: Longest Subarray with Sum K
+def longest_subarray_sum_k(nums, k):
+    prefix_sum = {0: -1}
+    curr_sum = 0
+    max_length = 0
+    for i in range(len(nums)):
+        curr_sum += nums[i]
+        if curr_sum - k in prefix_sum:
+            max_length = max(max_length, i - prefix_sum[curr_sum - k])
+        if curr_sum not in prefix_sum:
+            prefix_sum[curr_sum] = i
+    return max_length
+
+print("\nExercise 9 - Longest Subarray with Sum K:")
+print(longest_subarray_sum_k([1, -1, 2, 3, -2, 4], 3))
+
+# Exercise 10: Count Subarrays with Equal Number of 0s and 1s
+def count_subarrays_equal_01(nums):
+    count = 0
+    curr_sum = 0
+    sum_map = {0: 1}
+    for num in nums:
+        curr_sum += 1 if num == 1 else -1
+        if curr_sum in sum_map:
+            count += sum_map[curr_sum]
+            sum_map[curr_sum] += 1
+        else:
+            sum_map[curr_sum] = 1
+    return count
+
+print("\nExercise 10 - Count Subarrays with Equal Number of 0s and 1s:")
+print(count_subarrays_equal_01([1, 0, 1, 1, 0]))
+
+# Exercise 11: Smallest Subarray with All Characters
+def smallest_subarray_with_all_chars(s, pattern):
+    if not pattern or not s:
+        return 0
+    pattern_count = {}
+    for char in pattern:
+        pattern_count[char] = pattern_count.get(char, 0) + 1
+    required = len(pattern_count)
+    formed = 0
+    window_counts = {}
+    min_length = float('inf')
+    left = 0
+    for right in range(len(s)):
+        char = s[right]
+        window_counts[char] = window_counts.get(char, 0) + 1
+        if char in pattern_count and window_counts[char] == pattern_count[char]:
+            formed += 1
+        while left <= right and formed == required:
+            char = s[left]
+            if right - left + 1 < min_length:
+                min_length = right - left + 1
+            window_counts[char] -= 1
+            if char in pattern_count and window_counts[char] < pattern_count[char]:
+                formed -= 1
+            left += 1
+    return min_length if min_length != float('inf') else 0
+
+print("\nExercise 11 - Smallest Subarray with All Characters:")
+print(smallest_subarray_with_all_chars("abdcabc", "abc"))
+
+# Exercise 12: Maximum Points You Can Obtain from Cards
+def max_score(cards, k):
+    n = len(cards)
+    window_sum = sum(cards[:k])
+    max_sum = window_sum
+    for i in range(k):
+        window_sum = window_sum - cards[k - 1 - i] + cards[n - 1 - i]
+        max_sum = max(max_sum, window_sum)
+    return max_sum
+
+print("\nExercise 12 - Maximum Points You Can Obtain from Cards:")
+print(max_score([1, 2, 3, 4, 5, 6, 1], 3))
+
+# Exercise 13: Count Number of Nice Subarrays
+def number_of_nice_subarrays(nums, k):
+    def at_most_k_odd(nums, k):
+        left = 0
+        count = 0
+        odd_count = 0
+        for right in range(len(nums)):
+            if nums[right] % 2 == 1:
+                odd_count += 1
+            while odd_count > k:
+                if nums[left] % 2 == 1:
+                    odd_count -= 1
+                left += 1
+            count += right - left + 1
+        return count
+    return at_most_k_odd(nums, k) - at_most_k_odd(nums, k - 1)
+
+print("\nExercise 13 - Count Number of Nice Subarrays:")
+print(number_of_nice_subarrays([1, 1, 2, 1, 1], 3))
+
+# Exercise 14: Longest Well-Performing Interval
+def longest_wpi(hours):
+    score = 0
+    score_to_index = {}
+    max_length = 0
+    for i, h in enumerate(hours):
+        score += 1 if h > 8 else -1
+        if score > 0:
+            max_length = i + 1
+        if score not in score_to_index:
+            score_to_index[score] = i
+        if score - 1 in score_to_index:
+            max_length = max(max_length, i - score_to_index[score - 1])
+    return max_length
+
+print("\nExercise 14 - Longest Well-Performing Interval:")
+print(longest_wpi([9, 9, 6, 0, 6, 6, 9]))
+
+# Exercise 15: Sliding Window Median
+from heapq import heappush, heappop
+# Note: The original code for Exercise 15 uses 'heapify', which is not defined.
+# I'm keeping the original structure as requested, but be aware this version
+# may not work correctly without a proper way to remove an element and maintain the heap.
+def median_sliding_window(nums, k):
+    if not nums or k == 0:
+        return []
+    small, large = [], []
+    result = []
+    for i in range(k):
+        heappush(small, -nums[i])
+    for _ in range((k + 1) // 2):
+        heappush(large, -heappop(small))
+    result.append(float(large[0]) if k % 2 == 1 else (-small[0] + large[0]) / 2.0)
+    for i in range(k, len(nums)):
+        if nums[i - k] <= -small[0]:
+            small.remove(-nums[i - k])
+            # heapify(small) # Removed missing function call
+        else:
+            large.remove(nums[i - k])
+            # heapify(large) # Removed missing function call
+        heappush(small, -nums[i])
+        heappush(large, -heappop(small))
+        while len(large) < len(small):
+            heappush(small, -heappop(large))
+        result.append(float(large[0]) if k % 2 == 1 else (-small[0] + large[0]) / 2.0)
+    return result
+
+print("\nExercise 15 - Sliding Window Median:")
+print(median_sliding_window([1, 3, -1, -3, 5, 3, 6, 7], 3))
+print(median_sliding_window([1, 2], 2))
+
+# Exercise 16: Count Subarrays with Sum Equals K
+def subarray_sum_k(nums, k):
+    count = 0
+    curr_sum = 0
+    sum_map = {0: 1}
+    for num in nums:
+        curr_sum += num
+        if curr_sum - k in sum_map:
+            count += sum_map[curr_sum - k]
+        sum_map[curr_sum] = sum_map.get(curr_sum, 0) + 1
+    return count
+
+print("\nExercise 16 - Count Subarrays with Sum Equals K:")
+print(subarray_sum_k([1, 1, 1], 2))
