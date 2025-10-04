@@ -91,3 +91,16 @@ Repo này dùng để ghi lại quá trình học Python từ kiến thức C++.
   14. Minimum Window Substring.
   15. Sliding Window Maximum.
 - **File**: `day5_two_pointers.py`.
+
+## Day 6 – Sliding Window
+- **Topics**: Sliding window technique for array/string problems (max sum, substring, etc.).
+- **Exercises**:
+  1. Maximum Sum Subarray of Size K.
+  2. Minimum Size Subarray Sum.
+  3. Longest Substring with At Most K Distinct Characters.
+  4. Fruit Into Baskets.
+  5. Longest Repeating Character Replacement.
+  6. Minimum Window Substring.
+  7. Find All Anagrams in a String.
+  8. Subarrays with K Different Integers.
+- **File**: `day6_sliding_window.py`.
